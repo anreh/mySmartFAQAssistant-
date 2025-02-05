@@ -3,7 +3,7 @@ import openai
 openai.api_key =  st.secrets["mykey"]
 
 # Define neutral product features, benefits, pain points, and desires
-product_features = ["Heart Rate Monitoring", "Sleep Tracking", "GPS", "Personalised Workout Recommendations"]
+product_features = ["Heart Rate Monitoring", "Sleep Tracking", "Breathing Rate Monitoring", "Personalised Workout Recommendations"]
 product_benefits = ["Convenience", "Fitness tracker", "Personalized health assistance", "Energy efficiency", "Calorie burn calculator"]
 target_audience = ["Busy families", "Health-conscious individuals", "Tech enthusiasts", "Working adults", "Physical Trainers"]
 pain_points = ["lack of exercise", "lack of sleep ", "Time constraints", "helath issues"]
@@ -14,7 +14,7 @@ tones = ["Casual", "Informative", "Enthusiastic", "Humorous", "Inspirational"]
 # Function to generate marketing copy
 def generate_copy(product_name, product_features, product_benefits, target_audience, pain_points, desires, channel, tone):
     prompt = f"""
-    You're a marketing copywriter. Write a {channel} post caption and image description to promote the {product_name}, a new smart refrigerator.
+    You're a marketing copywriter. Write a {channel} post caption and image description to promote the {product_name}, Smart FAQ Assistant.
 
     **Target audience:** {target_audience}
 
@@ -41,7 +41,7 @@ def generate_copy(product_name, product_features, product_benefits, target_audie
     return caption, image_description
 
 # Streamlit UI
-st.title("Smart FAQ Assistant with Streamlit & Embeddings")
+st.title("Smart FAQ Assistant")
 
 product_name = st.text_input("Product Name:", value="Smart FAQ Assistant")
 selected_features = st.multiselect("Product Features:", product_features)
